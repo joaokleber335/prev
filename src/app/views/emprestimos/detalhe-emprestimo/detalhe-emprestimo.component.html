@@ -1,0 +1,79 @@
+<div fxLayout="column" fxFlex="100" style="padding: 10px;">
+  <div fxLayout="column" fxFlex="80" fxFlex.xs>
+    <div fxLayout="column">
+      <mat-card class="card">
+        <div fxLayout="row" fxFlex fxLayoutAlign="start">
+          <span>Empréstimo feito</span>
+        </div>
+        <div fxLayout="row" fxFlex fxLayoutAlign="end">
+          <span>R$ 400,00 à 3,5%</span>
+        </div>
+      </mat-card>
+      <br>
+      <mat-card class="card">
+        <div fxLayout="row" fxFlex fxLayoutAlign="start">
+          <span>Compensado:</span>
+        </div>
+        <div fxLayout="row" fxFlex fxLayoutAlign="end">
+          <span>R$ 200,00</span>
+        </div>
+      </mat-card>
+      <br>
+      <mat-card class="card" style="cursor: pointer;" (click)="goToOportunidades()">
+        <div fxLayout="row" fxFlex fxLayoutAlign="start">
+          <span>Oportunidades</span>
+        </div>
+      </mat-card>
+    </div>
+    <br>
+    <div fxLayout="column" fxFlex>
+      <canvas baseChart [data]="pieChartData" [labels]="pieChartLabels" [chartType]="pieChartType"
+        [options]="pieChartOptions" [colors]="pieChartColors" [legend]="pieChartLegend">
+      </canvas>
+      <br>
+      <mat-card fxLayout="column" fxFlex>
+        <div fxLayout="row">
+          <div fxLayout="row" fxFlex fxLayoutAlign="start">
+            <span>Tempo para compensação:</span>
+          </div>
+          <div fxLayout="row" fxFlex fxLayoutAlign="end center">
+            <span>3 meses</span>
+          </div>
+        </div>
+        <div fxLayout="row">
+          <div fxLayout="row" fxFlex fxLayoutAlign="start">
+            <span>Valor final da compensação:</span>
+          </div>
+          <div fxLayout="row" fxFlex fxLayoutAlign="end center">
+            <span>R$ 443,49</span>
+          </div>
+        </div>
+        <div fxLayout="row">
+          <div fxLayout="row" fxFlex fxLayoutAlign="start">
+            <span>Forma da compensação:</span>
+          </div>
+          <div fxLayout="row" fxFlex fxLayoutAlign="end center">
+            <span>Integral/Parcelado</span>
+          </div>
+        </div>
+      </mat-card>
+    </div>
+    <br>
+    <div fxLayout="row" fxLayout.xs="column" fxFlex="100" fxLayoutGap="10px">
+      <div *ngFor="let item of emprestimos" fxFlex fxFlex.xs>
+        <mat-card fxLayout="column" fxLayout.xs="row" fxFlex>
+          <mat-card-content>
+            <p>
+              {{item['title']}}
+              <span>{{item['value']}}</span>
+            </p>
+            <p>
+              {{item['title2']}}
+              <span>{{item['value2']}}</span>
+            </p>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </div>
+  </div>
+</div>

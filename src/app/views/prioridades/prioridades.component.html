@@ -1,0 +1,12 @@
+<div fxLayout="column" fxFlex="100" style="padding: 10px;">
+  <div fxLayout="column" fxFlex="80" fxFlex.xs>
+    <div fxLayout="row">
+      <h1>Defina as prioridades para o seu futuro!</h1>
+    </div>
+    <div fxLayout="column" *ngFor="let item of prioridades">
+      <mat-card (click)="goToDetalhePrioridade()" style="cursor: pointer;">
+        <mat-card-title>{{ item['title'] }}</mat-card-title>
+      </mat-card>
+    </div>
+  </div>
+</div>

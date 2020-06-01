@@ -1,0 +1,14 @@
+img {
+  height: 100px;
+  width: 100px;
+  border-radius: 80px;
+
+  @media (min-width: 320px) and (max-width: 800px) {
+    height: 80px;
+    width: 80px;
+  }
+}
+
+h2 {
+  margin: 0;
+}

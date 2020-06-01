@@ -1,0 +1,20 @@
+<mat-sidenav-container fullscreen>
+  <mat-toolbar color="primary" class="fixed-navbar mat-elevation-z10"></mat-toolbar>
+  <div fxLayout="row" fxFlex="100" style="padding: 10px;">
+    <div fxLayout="row" fxLayoutGap="10px">
+      <div>
+        <img src="../../../assets/img/icone.jpg" alt="image">
+      </div>
+      <div fxLayout="column" fxLayoutAlign="center start">
+        <h2>João kleber</h2>
+        <span>c 00000000-0</span>
+      </div>
+    </div>
+    <div fxFlex fxLayoutAlign="end center">
+      <img src="../../../../assets/img/AGP.png" alt="image" style="cursor: pointer;" (click)="goToEmprestimos()">
+    </div>
+  </div>
+  <main>
+    <router-outlet></router-outlet>
+  </main>
+</mat-sidenav-container>

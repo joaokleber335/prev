@@ -1,0 +1,14 @@
+<div fxLayout="column" fxFlex="100" style="padding: 10px;">
+  <div fxLayout="row" fxFlex="100" fxLayoutAlign="center">
+    <h1>Oportunidades!</h1>
+  </div>
+  <div fxLayout="row" fxFlex="100" fxLayoutAlign="start">
+    <h1>Baseado em suas prioridades em saúde</h1>
+  </div>
+  <br>
+  <div fxLayout="column" *ngFor="let item of oportunidades">
+    <mat-card style="margin-bottom: 10px;">
+      <mat-card-title>{{item['title']}}</mat-card-title>
+    </mat-card>
+  </div>
+</div>

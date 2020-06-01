@@ -1,0 +1,62 @@
+<div fxLayout="column" fxFlex="100" style="padding: 10px;">
+  <div fxLayout="column" fxFlex="80" fxFlex.xs>
+    <div fxLayout="row">
+      <mat-progress-bar mode="determinate" value="40" style="height: 25px;"></mat-progress-bar>
+    </div>
+    <br>
+    <div fxLayout="row" fxLayout.xs="column" fxFlex="100" fxLayoutGap="10px">
+      <div fxLayout="row" fxLayout.xs="row" fxFlex="67" fxLayoutGap="10px">
+        <mat-card class="card" fxLayout="row" fxFlex fxLayoutAlign="center">
+          <mat-card-title>Requisitar Empréstimo</mat-card-title>
+        </mat-card>
+        <mat-card class="card" fxLayout="row" fxFlex fxLayoutAlign="center">
+          <mat-card-title>Compensar Empréstimo</mat-card-title>
+        </mat-card>
+      </div>
+      <mat-card class="card" fxLayout="row" fxFlex="33" fxLayoutAlign="center" (click)="goToPrioridades()" style="cursor: pointer;">
+        <mat-card-title>Prioridades</mat-card-title>
+      </mat-card>
+    </div>
+  </div>
+  <br>
+  <div fxLayout="column" fxFlex>
+    <mat-card class="card-grafico-bar">
+      <canvas baseChart [datasets]="barChartData" [labels]="barChartLabels" [options]="barChartOptions"
+        [colors]="barChartColors" [legend]="barChartLegend" [chartType]="barChartType">
+      </canvas>
+    </mat-card>
+  </div>
+  <br>
+  <div fxLayout="row" fxLayout.xs="column" fxFlex fxLayoutGap="15px">
+    <div fxLayout="column" fxFlex>
+      <mat-card class="card" style="cursor: pointer;" (click)="goDetalheEmprestimo()">
+        <mat-card-title>{{informacoesEmprestimo[0]['title']}}</mat-card-title>
+        <mat-card-content *ngFor="let item of informacoesEmprestimo[0]['informacoes']">
+          <div fxLayout="row" fxFlex="100">
+            <div fxLayout="row" fxFlex fxLayoutAlign="start">
+              <span>{{item['title']}}</span>
+            </div>
+            <div fxLayout="row" fxFlex fxLayoutAlign="end">
+              <span>{{item['value']}}</span>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+    <div fxLayout="column" fxFlex>
+      <mat-card class="card">
+        <mat-card-title>{{informacoesPrevidencia[0]['title']}}</mat-card-title>
+        <mat-card-content *ngFor="let item of informacoesPrevidencia[0]['informacoes']">
+          <div fxLayout="row" fxFlex="100">
+            <div fxLayout="row" fxFlex fxLayoutAlign="start">
+              <span>{{item['title']}}</span>
+            </div>
+            <div fxLayout="row" fxFlex fxLayoutAlign="end">
+              <span>{{item['value']}}</span>
+            </div>
+          </div>
+        </mat-card-content>
+      </mat-card>
+    </div>
+  </div>
+</div>
